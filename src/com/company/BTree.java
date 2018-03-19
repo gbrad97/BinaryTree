@@ -1,5 +1,8 @@
 package com.company;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class BTree {
     public BTNode root;
     public int value;
@@ -53,8 +56,8 @@ public class BTree {
         }
         else {
             System.out.print(currentNode.value + " ");
-            preOrderTraversal(currentNode.left);
-            preOrderTraversal(currentNode.right);
+            inOrderTraversal(currentNode.left);
+            inOrderTraversal(currentNode.right);
         }
     }
 
@@ -66,6 +69,20 @@ public class BTree {
             inOrderTraversal(currentNode.left);
             System.out.print(currentNode.value + " ");
             inOrderTraversal(currentNode.right);
+        }
+    }
+
+    public void levelOrderTraversal(BTree root) {
+        Queue<BTNode> queue=new LinkedList<>();
+        queue.add(root.root);
+        while(!queue.isEmpty())
+        {
+            BTNode tempNode=queue.poll();
+            System.out.print(tempNode.value + " ");
+            if(tempNode.left!=null)
+                queue.add(tempNode.left);
+            if(tempNode.right!=null)
+                queue.add(tempNode.right);
         }
     }
 
