@@ -11,15 +11,19 @@ public class Main {
         btree.insertBST(15);
         btree.insertBST(7);
         btree.insertBST(11);
-       
-        System.out.print("Tree (PreOrder) (5 3 1 4 10 7 15 11): ");
+
+        System.out.print("Tree (PreOrder): ");
         btree.outputPreOrder();
 
-        System.out.print("\nTree (InOrder) (1 3 4 5 7 10 11 15): ");
+        System.out.print("\nTree (InOrder): ");
         btree.outputInOrder();
 
-        System.out.print("\nTree (PostOrder) (1 4 3 7 11 15 10 5): ");
+        System.out.print("\nTree (PostOrder): ");
         btree.outputPostOrder();
+
+        System.out.println("Tree Size (8): " + btree.size());
+
+        
 
     }
 }

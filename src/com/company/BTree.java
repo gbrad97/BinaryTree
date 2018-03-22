@@ -80,6 +80,22 @@ public class BTree {
         }
     }
 
+    // call the size method with the tree's root
+    public int size() {
+        return size(root);
+    }
+
+    private int size(BTNode node) {
+        if (node == null) {
+            return 0;
+        }
+        else {
+            return 1 + size(node.left) + size(node.right);
+        }
+    }
+
+
+
 
     public class BTNode {
         int value;
