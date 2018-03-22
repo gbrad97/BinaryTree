@@ -3,7 +3,7 @@ package com.company;
 public class Main {
 
     public static void main(String[] args) {
-        BTree btree = new BTree(5);
+        BSTree btree = new BSTree(5);
         btree.insertBST(3);
         btree.insertBST(1);
         btree.insertBST(4);
@@ -21,7 +21,11 @@ public class Main {
         System.out.print("\nTree (PostOrder): ");
         btree.outputPostOrder();
 
-        System.out.println("Tree Size (8): " + btree.size());
+        System.out.println("\nTree Size (8): " + btree.size());
+
+        System.out.println("\nWhat is the maximum value of the tree? (15): " + btree.maxValue());
+
+        System.out.println("\nWhat is the minimum value of the tree? (1): " + btree.minValue());
 
 
 
