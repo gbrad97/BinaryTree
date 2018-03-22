@@ -23,7 +23,7 @@ public class Main {
 
         System.out.println("Tree Size (8): " + btree.size());
 
-        
+
 
     }
 }
