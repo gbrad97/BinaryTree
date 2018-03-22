@@ -143,6 +143,20 @@ public class BSTree {
         return minValue(node.left);
     }
 
+    // find the sum of all the nodes
+    public int sumOfNodes() {
+        return sumOfNodes(root);
+    }
+
+    private int sumOfNodes(BSTNode node) {
+        if (node == null) {
+            return 0;
+        }
+        else {
+            return node.value + sumOfNodes(node.left) + sumOfNodes(node.right);
+        }
+    }
+
 
     public class BSTNode {
         int value;
