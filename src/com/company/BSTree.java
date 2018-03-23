@@ -199,6 +199,40 @@ public class BSTree {
         return howManyLeaves(node.left) + howManyLeaves(node.right);
     }
 
+    // Is a given value in both the left and right subtree?
+    public boolean searchLeftSubtree(BSTNode node, int value) {
+        if (node == null) {
+            return false;
+        }
+        else if (node.value == value) {
+            return true;
+        }
+        return searchLeftSubtree(node.left, value);
+    }
+
+    public boolean searchRightSubTree(BSTNode node, int value) {
+       if (node == null) {
+           return false;
+       }
+       else if (node.value == value) {
+           return true;
+       }
+       return searchRightSubTree(node.right, value);
+    }
+
+    private boolean isValueInBothSubTrees(BSTNode node, int value) {
+        return searchLeftSubtree(node, value) && searchRightSubTree(node, value);
+    }
+
+    public boolean isValueInBothSubTrees(int value) {
+        return isValueInBothSubTrees(root, value);
+    }
+    // Is the tree a full tree?
+    // Is the tree a binary search tree?
+    // Does a path, X next to Y next to Z exist in the tree?
+    // Does a path exist between X and Z?
+    // Find the lowest common ancestor.
+
 
     public class BSTNode {
         int value;

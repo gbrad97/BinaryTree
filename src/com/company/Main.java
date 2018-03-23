@@ -31,21 +31,24 @@ public class Main {
         /** Level order traversal starts at the root then it moves to the left node of the root and to the right node.
          * It keeps traversing the tree in this way, until it gets to the end of the tree. A queue is used because it
          * allows for each node to be stored in the order that it was visited, through the push method. The pop method,
-         * then allows for the nodes to be printed in the order that they were visited.**/
+         * then allows for the nodes to be printed in the order that they were visited. **/
 
         System.out.print("\n\nLevel Order Traversal: ");
 
         btree.levelOrderTraversal(btree);
 
         // TODO Given your btree, what is the sum of all the nodes?
-        System.out.println("\n\nSum of the Nodes (56): " + btree.sumOfNodes());
+        System.out.println("\nSum of the Nodes (56): " + btree.sumOfNodes());
 
         // TODO Is the sum of the left subtree less than the sum of the right subtree?
-        System.out.println("\n\nIs the sum of the left subtree less than the sum of the right subtree (true)? : "
+        System.out.println("\nIs the sum of the left subtree less than the sum of the right subtree (true)? : "
                 + btree.isLeftSubTreeLessThanRightSubTree());
 
         // TODO How many leaves are in btree?
-        System.out.println("\n\nHow many leaves are in the tree?: " + btree.howManyLeaves());
+        System.out.println("\nHow many leaves are in the tree?: " + btree.howManyLeaves());
+
+        System.out.println("\nIs 10 in both the left subtree and the right subtree?: "
+                + btree.isValueInBothSubTrees(10));
 
 
 
