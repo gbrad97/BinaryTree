@@ -157,6 +157,48 @@ public class BSTree {
         }
     }
 
+    private int sumOfLeftSubTree(BSTNode node) {
+        if (node == null) {
+            return 0;
+        }
+        else {
+            return node.value + sumOfLeftSubTree(node.left);
+        }
+    }
+
+    private int sumOfRightSubTree(BSTNode node) {
+        if (node == null) {
+            return 0;
+        }
+        else {
+            return node.value + sumOfRightSubTree(node.right);
+        }
+    }
+
+    public boolean isLeftSubTreeLessThanRightSubTree() {
+        return isLeftSubTreeLessThanRightSubTree(root);
+    }
+
+    private boolean isLeftSubTreeLessThanRightSubTree(BSTNode node) {
+        int leftTreeSum = sumOfLeftSubTree(node);
+        int rightTreeSum = sumOfRightSubTree(node);
+        return leftTreeSum < rightTreeSum;
+    }
+
+    public int howManyLeaves() {
+        return howManyLeaves(root);
+    }
+
+    private int howManyLeaves(BSTNode node) {
+        if (node == null) {
+            return 0;
+        }
+        else if (node.left != null && node.right != null) {
+            return 1;
+        }
+        return howManyLeaves(node.left) + howManyLeaves(node.right);
+    }
+
 
     public class BSTNode {
         int value;

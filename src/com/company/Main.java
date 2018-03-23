@@ -40,10 +40,12 @@ public class Main {
         // TODO Given your btree, what is the sum of all the nodes?
         System.out.println("\n\nSum of the Nodes (56): " + btree.sumOfNodes());
 
-
         // TODO Is the sum of the left subtree less than the sum of the right subtree?
+        System.out.println("\n\nIs the sum of the left subtree less than the sum of the right subtree (true)? : "
+                + btree.isLeftSubTreeLessThanRightSubTree());
 
         // TODO How many leaves are in btree?
+        System.out.println("\n\nHow many leaves are in the tree?: " + btree.howManyLeaves());
 
 
 
