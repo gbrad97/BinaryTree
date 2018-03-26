@@ -200,21 +200,12 @@ public class BSTree {
     }
 
     private int sumOfLeftSubTree(BSTNode node) {
-        if (node == null) {
-            return 0;
-        }
-        else {
-            return node.value + sumOfLeftSubTree(node.left);
-        }
+        return sumOfNodes(node.left);
     }
 
     private int sumOfRightSubTree(BSTNode node) {
-        if (node == null) {
-            return 0;
-        }
-        else {
-            return node.value + sumOfRightSubTree(node.right);
-        }
+        return sumOfNodes(node.right);
+
     }
 
     public boolean isLeftSubTreeLessThanRightSubTree() {
