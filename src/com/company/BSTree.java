@@ -180,8 +180,8 @@ public class BSTree {
     }
 
     private boolean isLeftSubTreeLessThanRightSubTree(BSTNode node) {
-        int leftTreeSum = sumOfLeftSubTree(node);
-        int rightTreeSum = sumOfRightSubTree(node);
+        int leftTreeSum = size(node.left);
+        int rightTreeSum = size(node.right);
         return leftTreeSum < rightTreeSum;
     }
 
