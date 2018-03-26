@@ -101,41 +101,7 @@ public class BSTree {
             return 1 + size(node.left) + size(node.right);
         }
     }
-
-    /*
-    public int maxValue() {
-        return maxValue(root);
-    }
-
-
-    // find the max value of the tree
-    private int maxValue(BSTNode node) {
-        // check if node is null
-        if (node == null) {
-            return 0;
-        }
-        // if node.right == null then the max value is at the root
-        else if (node.right == null) {
-            return node.value;
-        }
-        // else keep moving to the right of the root
-        return maxValue(node.right);
-    }
-
-    public int minValue() {
-        return minValue(root);
-    }
-
-    private int minValue(BSTNode node) {
-        if (node == null) {
-            return 0;
-        }
-        else if (node.left == null) {
-            return node.value;
-        }
-        return minValue(node.left);
-    }
-    */
+    
 
     public int maxValue() {
         return findMax(root);
@@ -255,7 +221,7 @@ public class BSTree {
         return false;
     }
 
-    
+
     // Is the tree a full tree?
     // Is the tree a binary search tree?
     // Does a path, X next to Y next to Z exist in the tree?
