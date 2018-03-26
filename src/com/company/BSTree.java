@@ -51,10 +51,7 @@ public class BSTree {
 
 
     private void preOrderTraversal(BSTNode currentNode) {
-        if (currentNode == null) {
-            System.out.print("");
-        }
-        else {
+        if (currentNode != null) {
             System.out.print(currentNode.value + " ");
             inOrderTraversal(currentNode.left);
             inOrderTraversal(currentNode.right);
@@ -62,10 +59,7 @@ public class BSTree {
     }
 
     private void inOrderTraversal(BSTNode currentNode) {
-        if (currentNode == null) {
-            System.out.print("");
-        }
-        else {
+        if (currentNode != null){
             inOrderTraversal(currentNode.left);
             System.out.print(currentNode.value + " ");
             inOrderTraversal(currentNode.right);
@@ -87,10 +81,7 @@ public class BSTree {
     }
 
     private void postOrderTraversal(BSTNode currentNode) {
-        if (currentNode == null) {
-            System.out.print("");
-        }
-        else {
+        if (currentNode != null) {
             postOrderTraversal(currentNode.left);
             postOrderTraversal(currentNode.right);
             System.out.print(currentNode.value + " ");
@@ -111,9 +102,11 @@ public class BSTree {
         }
     }
 
+    /*
     public int maxValue() {
         return maxValue(root);
     }
+
 
     // find the max value of the tree
     private int maxValue(BSTNode node) {
@@ -141,6 +134,55 @@ public class BSTree {
             return node.value;
         }
         return minValue(node.left);
+    }
+    */
+
+    public int maxValue() {
+        return findMax(root);
+    }
+
+    private int findMax(BSTNode node) {
+        if (node == null) {
+            return Integer.MIN_VALUE;
+        }
+        else {
+            int max = node.value;
+            // find the max of the left subtree
+            int leftMax = findMax(node.left);
+            // find the max of the right subtree
+            int rightMax = findMax(node.right);
+            // compare the 3 values
+            if (max < leftMax) {
+                max = leftMax;
+            }
+            if (max < rightMax) {
+                max = rightMax;
+            }
+            return max;
+
+        }
+    }
+
+    public int minValue() {
+        return findMin(root);
+    }
+
+    private int findMin(BSTNode node) {
+        if (node == null) {
+            return Integer.MAX_VALUE;
+        }
+        else {
+            int min = node.value;
+            int leftMin = findMin(node.left);
+            int rightMin = findMin(node.right);
+            if (min > leftMin) {
+                min = leftMin;
+            }
+            if (min > rightMin) {
+                min = rightMin;
+            }
+            return min;
+        }
     }
 
     // find the sum of all the nodes
