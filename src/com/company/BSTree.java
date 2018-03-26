@@ -102,6 +102,11 @@ public class BSTree {
         }
     }
 
+    public boolean isLeaf(BSTNode node) {
+        return node.left == null && node.right == null;
+
+    }
+
 
     public int maxValue() {
         return findMax(root);
@@ -166,14 +171,6 @@ public class BSTree {
         }
     }
 
-    private int sumOfLeftSubTree(BSTNode node) {
-        return sumOfNodes(node.left);
-    }
-
-    private int sumOfRightSubTree(BSTNode node) {
-        return sumOfNodes(node.right);
-
-    }
 
     public boolean isLeftSubTreeLessThanRightSubTree() {
         return isLeftSubTreeLessThanRightSubTree(root);
@@ -193,7 +190,7 @@ public class BSTree {
         if (node == null) {
             return 0;
         }
-        else if (node.left != null && node.right != null) {
+        else if (isLeaf(node)) {
             return 1;
         }
         return howManyLeaves(node.left) + howManyLeaves(node.right);
