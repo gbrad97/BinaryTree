@@ -101,7 +101,7 @@ public class BSTree {
             return 1 + size(node.left) + size(node.right);
         }
     }
-    
+
 
     public int maxValue() {
         return findMax(root);
@@ -109,6 +109,7 @@ public class BSTree {
 
     private int findMax(BSTNode node) {
         if (node == null) {
+            // not sure if I'm using this correctly
             return Integer.MIN_VALUE;
         }
         else {
