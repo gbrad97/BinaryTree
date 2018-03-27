@@ -220,7 +220,27 @@ public class BSTree {
     }
 
 
-    // Is the tree a full tree?
+    // Is the tree a full tree? A full tree is when all of the nodes, except the leaf nodes, have 2 children
+    public boolean isFullTree() {
+        return isFullTree(root);
+    }
+    private boolean isFullTree(BSTNode node) {
+        // if node is null, set boolean to false
+        // if node.isLeaf(), then set boolean to true
+        // if node has a left and a right child, then set bool to true
+        // check the left and right trees of the node
+        if (node == null) {
+            return false;
+        }
+        if (isLeaf(node)) {
+            return true;
+        }
+        if (node.left != null && node.right != null) {
+            return isFullTree(node.left) && isFullTree(node.right);
+        }
+        return false;
+    }
+
     // Is the tree a binary search tree?
     // Does a path, X next to Y next to Z exist in the tree?
     // Does a path exist between X and Z?

@@ -50,6 +50,9 @@ public class Main {
         System.out.println("\nIs 10 in both the left subtree and the right subtree?: "
                 + btree.isValueInBothSubTrees(10));
 
+        System.out.println("\nIs the tree a full tree?: " + btree.isFullTree());
+
+
 
 
     }
