@@ -3,26 +3,26 @@ package com.company;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class BSTree {
-    public BSTNode root;
+public class BTree {
+    public BTNode root;
     public int value;
 
-    public BSTree(int value) {
+    public BTree(int value) {
         this.value = value;
-        this.root = new BSTNode(value);
+        this.root = new BTNode(value);
     }
 
     // calls addBST to start at the root of the tree
-    public BSTree insertBST(int value) {
-        BSTree tree = this;
+    public BTree insertBST(int value) {
+        BTree tree = this;
         tree.root = addBST(tree.root, value);
         return tree;
     }
 
-    private BSTNode addBST(BSTNode currentNode, int value) {
+    private BTNode addBST(BTNode currentNode, int value) {
 
         if (currentNode == null) {
-            return new BSTNode(value);
+            return new BTNode(value);
         }
         else {
             if (value <= currentNode.value) {
@@ -50,7 +50,7 @@ public class BSTree {
 
 
 
-    private void preOrderTraversal(BSTNode currentNode) {
+    private void preOrderTraversal(BTNode currentNode) {
         if (currentNode != null) {
             System.out.print(currentNode.value + " ");
             inOrderTraversal(currentNode.left);
@@ -58,7 +58,7 @@ public class BSTree {
         }
     }
 
-    private void inOrderTraversal(BSTNode currentNode) {
+    private void inOrderTraversal(BTNode currentNode) {
         if (currentNode != null){
             inOrderTraversal(currentNode.left);
             System.out.print(currentNode.value + " ");
@@ -66,12 +66,12 @@ public class BSTree {
         }
     }
 
-    public void levelOrderTraversal(BSTree root) {
-        Queue<BSTNode> queue=new LinkedList<>();
+    public void levelOrderTraversal(BTree root) {
+        Queue<BTNode> queue=new LinkedList<>();
         queue.add(root.root);
         while(!queue.isEmpty())
         {
-            BSTNode tempNode=queue.poll();
+            BTNode tempNode=queue.poll();
             System.out.print(tempNode.value + " ");
             if(tempNode.left!=null)
                 queue.add(tempNode.left);
@@ -80,7 +80,7 @@ public class BSTree {
         }
     }
 
-    private void postOrderTraversal(BSTNode currentNode) {
+    private void postOrderTraversal(BTNode currentNode) {
         if (currentNode != null) {
             postOrderTraversal(currentNode.left);
             postOrderTraversal(currentNode.right);
@@ -93,7 +93,7 @@ public class BSTree {
         return size(root);
     }
 
-    private int size(BSTNode node) {
+    private int size(BTNode node) {
         if (node == null) {
             return 0;
         }
@@ -102,7 +102,7 @@ public class BSTree {
         }
     }
 
-    public boolean isLeaf(BSTNode node) {
+    public boolean isLeaf(BTNode node) {
         return node.left == null && node.right == null;
 
     }
@@ -112,7 +112,7 @@ public class BSTree {
         return findMax(root);
     }
 
-    private int findMax(BSTNode node) {
+    private int findMax(BTNode node) {
         if (node == null) {
             // not sure if I'm using this correctly
             return Integer.MIN_VALUE;
@@ -139,7 +139,7 @@ public class BSTree {
         return findMin(root);
     }
 
-    private int findMin(BSTNode node) {
+    private int findMin(BTNode node) {
         if (node == null) {
             return Integer.MAX_VALUE;
         }
@@ -162,7 +162,7 @@ public class BSTree {
         return sumOfNodes(root);
     }
 
-    private int sumOfNodes(BSTNode node) {
+    private int sumOfNodes(BTNode node) {
         if (node == null) {
             return 0;
         }
@@ -176,7 +176,7 @@ public class BSTree {
         return isLeftSubTreeLessThanRightSubTree(root);
     }
 
-    private boolean isLeftSubTreeLessThanRightSubTree(BSTNode node) {
+    private boolean isLeftSubTreeLessThanRightSubTree(BTNode node) {
         int leftTreeSum = size(node.left);
         int rightTreeSum = size(node.right);
         return leftTreeSum < rightTreeSum;
@@ -186,7 +186,7 @@ public class BSTree {
         return howManyLeaves(root);
     }
 
-    private int howManyLeaves(BSTNode node) {
+    private int howManyLeaves(BTNode node) {
         if (node == null) {
             return 0;
         }
@@ -200,11 +200,11 @@ public class BSTree {
         return isValueInBothSubTrees(root, value);
     }
 
-    private boolean isValueInBothSubTrees(BSTNode node, int value) {
+    private boolean isValueInBothSubTrees(BTNode node, int value) {
         return search(node.left, value) && search(node.right, value);
     }
 
-    public boolean search(BSTNode node, int value) {
+    public boolean search(BTNode node, int value) {
         // check if node.value == root.value
         // check if node.value == root.left.value
         // check if node.value == root.right.value
@@ -224,7 +224,7 @@ public class BSTree {
     public boolean isFullTree() {
         return isFullTree(root);
     }
-    private boolean isFullTree(BSTNode node) {
+    private boolean isFullTree(BTNode node) {
         // if node is null, set boolean to false
         // if node.isLeaf(), then set boolean to true
         // if node has a left and a right child, then set bool to true
@@ -247,12 +247,12 @@ public class BSTree {
     // Find the lowest common ancestor.
 
 
-    public class BSTNode {
+    public class BTNode {
         int value;
-        BSTNode left;
-        BSTNode right;
+        BTNode left;
+        BTNode right;
 
-        public BSTNode(int value) {
+        public BTNode(int value) {
             this.value = value;
             left = null;
             right = null;

@@ -3,7 +3,7 @@ package com.company;
 public class Main {
 
     public static void main(String[] args) {
-        BSTree btree = new BSTree(5);
+        BTree btree = new BTree(5);
         btree.insertBST(3);
         btree.insertBST(1);
         btree.insertBST(4);
