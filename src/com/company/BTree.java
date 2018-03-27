@@ -2,6 +2,7 @@ package com.company;
 
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Random;
 
 public class BTree {
     public BTNode root;
@@ -34,6 +35,8 @@ public class BTree {
         }
         return currentNode;
     }
+
+
 
 
     public void outputPreOrder() {
@@ -78,6 +81,52 @@ public class BTree {
             if(tempNode.right!=null)
                 queue.add(tempNode.right);
         }
+    }
+
+    public BTree insertBT(int value) {
+        this.root = addBT(this.root, value);
+        return this;
+    }
+
+    private BTNode addBT(BTNode currentNode, int value) {
+        /*
+        Queue<BTNode> queue = new LinkedList<>();
+        queue.add(rootNode);
+        while(!queue.isEmpty()) {
+            // remove current node from queue
+            // if the node's left is null, create a new node with the given value; else add it to queue
+            // repeat for the node's right
+            BTNode tempNode = queue.poll();
+            if (tempNode.left == null) {
+                tempNode.left = new BTNode(value);
+            }
+            else {
+                queue.add(tempNode.left);
+            }
+            if (tempNode.right == null) {
+                tempNode.right = new BTNode(value);
+            }
+            else {
+                queue.add(tempNode.right);
+            }
+        }
+        */
+
+        if (currentNode == null) {
+            return new BTNode(value);
+        } else {
+            Random rand = new Random();
+            int position = rand.nextInt(2);
+            // if position == 0, move left
+            if (position == 0) {
+                currentNode.left = addBT(currentNode.left, value);
+            }
+            else if (position == 1) {
+                currentNode.right = addBT(currentNode.right, value);
+            }
+        }
+        return currentNode;
+
     }
 
     private void postOrderTraversal(BTNode currentNode) {
