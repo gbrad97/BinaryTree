@@ -5,11 +5,10 @@ import java.util.Queue;
 import java.util.Random;
 
 public class BTree {
-    public BTNode root;
+    private BTNode root;
 
     // TODO 03 I'm confused.  Doesn't a BTNode include the value and possibly a left and right BTNode?
     // TODO 04 If so, why does a BTree have a value instance variable?
-    public int value;
 
     // TODO 05 Make your 2 instance variables private and run your code.
     // TODO 06 Remove the value instance variable and run your code.
@@ -25,7 +24,6 @@ public class BTree {
      */
 
     public BTree(int value) {
-        this.value = value;
         this.root = new BTNode(value);
     }
 
