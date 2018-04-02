@@ -7,16 +7,16 @@ import java.util.Random;
 public class BTree {
     private BTNode root;
 
-    // TODO 03 I'm confused.  Doesn't a BTNode include the value and possibly a left and right BTNode?
-    // TODO 04 If so, why does a BTree have a value instance variable?
+    // 03 I'm confused.  Doesn't a BTNode include the value and possibly a left and right BTNode?
+    // 04 If so, why does a BTree have a value instance variable?
 
-    // TODO 05 Make your 2 instance variables private and run your code.
-    // TODO 06 Remove the value instance variable and run your code.
-    // TODO 07 Push this version of your code.
+    // 05 Make your 2 instance variables private and run your code.
+    // 06 Remove the value instance variable and run your code.
+    // 07 Push this version of your code.
 
-    // TODO 08 Rather than use a BTNode, we could declare a BinaryTree to have these 3 instance variables.
-    // TODO 09 By doing this, we're always thinking that the "root" is the "this" object.
-    // TODO 10 Create a new class named BinaryTree that has these 3 instance variables and works like your BTree.
+    // 08 Rather than use a BTNode, we could declare a BinaryTree to have these 3 instance variables.
+    // 09 By doing this, we're always thinking that the "root" is the "this" object.
+    // 10 Create a new class named BinaryTree that has these 3 instance variables and works like your BTree.
     /*
         private int value;
         private BinaryTree left;
