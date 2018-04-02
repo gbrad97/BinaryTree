@@ -310,8 +310,8 @@ public class BTree {
     // Find the lowest common ancestor.
 
 
-    // TODO 01 BTNode is called an inner class because it is declared inside the BTree class.
-    // TODO 02 BTNode is only known while in BTree so should be private.
+    // 01 BTNode is called an inner class because it is declared inside the BTree class.
+    // 02 BTNode is only known while in BTree so should be private.
     private class BTNode {
         int value;
         BTNode left;
