@@ -28,7 +28,7 @@ public class Main {
 
         System.out.println("\nWhat is the minimum value of the tree? (1): " + bstree.minValue());
 
-        // TODO Do you understand how level order traversal works?  Why does it use a queue?
+        // Do you understand how level order traversal works?  Why does it use a queue?
         /** Level order traversal starts at the root then it moves to the left node of the root and to the right node.
          * It keeps traversing the tree in this way, until it gets to the end of the tree. A queue is used because it
          * allows for each node to be stored in the order that it was visited, through the push method. The pop method,
@@ -38,14 +38,14 @@ public class Main {
 
         bstree.levelOrderTraversal(bstree);
 
-        // TODO Given your btree, what is the sum of all the nodes?
+        // Given your btree, what is the sum of all the nodes?
         System.out.println("\nSum of the Nodes (56): " + bstree.sumOfNodes());
 
-        // TODO Is the sum of the left subtree less than the sum of the right subtree?
+        // Is the sum of the left subtree less than the sum of the right subtree?
         System.out.println("\nIs the sum of the left subtree less than the sum of the right subtree (true)? : "
                 + bstree.isLeftSubTreeLessThanRightSubTree());
 
-        // TODO How many leaves are in btree?
+        // How many leaves are in btree?
         System.out.println("\nHow many leaves are in the tree?: " + bstree.howManyLeaves());
 
         System.out.println("\nIs 10 in both the left subtree and the right subtree?: "
