@@ -304,7 +304,46 @@ public class BTree {
         return false;
     }
 
+
+
     // Is the tree a binary search tree?
+
+
+    // checks if the children of a subtree is less than the given root node
+    public boolean isLess(BTNode node, int value) {
+        if (node == null) {
+            return true;
+        }
+        else {
+            boolean isLessLeft = isLess(node.left, value);
+            boolean isLessRight = isLess(node.right, value);
+            if (node.value <= value && isLessLeft && isLessRight) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
+
+    // checks if the children of a subtree is greater than the given root node
+    public boolean isGreater(BTNode node, int value) {
+        if (node == null) {
+            return true;
+        }
+        else {
+            boolean isGreaterLeft = isGreater(node.left, value);
+            boolean isGreaterRight = isGreater(node.right, value);
+            if (node.value > value && isGreaterLeft && isGreaterRight) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
+
+
+
+
     // Does a path, X next to Y next to Z exist in the tree?
     // Does a path exist between X and Z?
     // Find the lowest common ancestor.
