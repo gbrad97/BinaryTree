@@ -53,7 +53,7 @@ public class Main {
 
         System.out.println("\nIs the tree a full tree?: " + bstree.isFullTree());
 
-        //System.out.println("\nIs the tree a binary search tree? (True): " + bstree.isBST());
+        System.out.println("\nIs the tree a binary search tree? (True): " + bstree.isBST());
 
 
         // Create a binary tree
@@ -95,7 +95,7 @@ public class Main {
 
         System.out.println("\nIs the tree a full tree?: " + bTree.isFullTree());
 
-        //System.out.println("\nIs the tree a binary search tree? (False): " + bTree.isBST());
+        System.out.println("\nIs the tree a binary search tree? (False): " + bTree.isBST());
 
 
 

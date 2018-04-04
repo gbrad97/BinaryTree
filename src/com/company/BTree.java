@@ -308,6 +308,28 @@ public class BTree {
 
     // Is the tree a binary search tree?
 
+    public boolean isBST() {
+        return isBST(root);
+    }
+
+    private boolean isBST(BTNode node) {
+        // check if the tree is BST
+        if (node != null || isLeaf(node)) {
+            return true;
+        }
+        else {
+            if (node.left != null || node.right != null) {
+                if (node.left != null) {
+                    return node.left.value < node.value;
+                }
+                if (node.right != null) {
+                    return node.right.value > node.value;
+                }
+            }
+        }
+        return isBST(node.left) && isBST(node.right);
+    }
+
 
     // checks if the children of a subtree is less than the given root node
     public boolean isLess(BTNode node, int value) {
