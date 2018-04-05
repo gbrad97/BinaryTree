@@ -314,18 +314,17 @@ public class BTree {
 
     private boolean isBST(BTNode node) {
         // check if the tree is BST
-        if (node != null || isLeaf(node)) {
+        if (node == null || isLeaf(node)) {
             return true;
         }
-        else {
-            if (node.left != null || node.right != null) {
-                if (node.left != null) {
-                    return node.left.value < node.value;
-                }
-                if (node.right != null) {
-                    return node.right.value > node.value;
-                }
-            }
+        if (node.left != null) {
+            return node.left.value < node.value && isBST(node.left);
+        }
+        if (node.right != null) {
+            return node.right.value > node.value && isBST(node.right);
+        }
+        if (!(node.left.value < node.value && node.right.value > node.value)) {
+            return false;
         }
         return isBST(node.left) && isBST(node.right);
     }

@@ -64,7 +64,7 @@ public class Main {
         bTree.insertBT(33);
         bTree.insertBT(11);
 
-        System.out.print("Tree (PreOrder): ");
+        System.out.print("\nTree (PreOrder): ");
         bTree.outputPreOrder();
 
         System.out.print("\nTree (InOrder): ");
