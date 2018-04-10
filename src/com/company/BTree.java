@@ -364,9 +364,20 @@ public class BTree {
 
 
 
+    public int height() {
+        return height(root);
+    }
+    // a single node has a height of 1
+    private int height(BTNode node) {
+        if (node == null) {
+            return 0;
+        }
+        if (isLeaf(node)) {
+            return 1;
+        }
+        return 1 + Math.max(height(node.left), height(node.right));
+    }
 
-    // Does a path, X next to Y next to Z exist in the tree?
-    // Does a path exist between X and Z?
     // Find the lowest common ancestor.
 
 
